@@ -1,0 +1,16 @@
+{% extends 'auctioner/base.html' %}
+{% block content %}
+<form action="" method="post" autocomplete="off">
+    {% csrf_token %}
+
+    {{form}}
+
+    <div class="col-md-6">
+       <button type="submit" class="btn btn-primary btn-block btn-lg" ><i class="fas fa-database"></i> Submit</button>
+
+     </div>
+
+
+</form>
+{% endblock content %}
+          

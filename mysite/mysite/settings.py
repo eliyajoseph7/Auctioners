@@ -42,7 +42,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'auctioner',
+    'crispy_forms',
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -59,7 +62,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['D:/DJANGO/mysite/auctioner/templates'],
+        'DIRS': ['/home/drdegodlove/Desktop/fyp/rp-portfolio/employee/Auctioners/mysite/auctioner/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
