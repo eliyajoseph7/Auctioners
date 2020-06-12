@@ -25,6 +25,13 @@
     <!-- Custom styles for this template -->
     <link href="{% static 'css/agency.min.css' %}" rel="stylesheet">
 
+    <style>
+        hr.divider {
+            max-width: 25rem;
+            border-width: 0.2rem;
+            border-color: #6C757D;
+        }
+    </style>
 </head>
 
 <body id="page-top">
@@ -65,69 +72,84 @@
             </div>
         </div>
     </nav>
-     <section class="page-section" id="services">
+    <section class="page-section" id="services" style="background-color: aliceblue;">
         <div class="container">
 
-       <div class="content-inner">
-          {% block content %}
-         {% endblock content %}
+            <div class="content-inner">
+                {% block content %} {% endblock content %}
 
+
+            </div>
         </div>
-     </div>
- </section>
-  </body>
-    </html>
+    </section>
+</body>
+
+</html>
 
 
 
-            <div class="footer-bottom bg-dark">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 footer-about wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
-                            <h3>About us</h3>
-                            <p>
-                                We are a young company always looking for new and creative ideas to help you with our products in your everyday work.
-                            </p>
-                            <p>© Company Inc.</p>
-                        </div>
-                        <div class="col-md-4 offset-md-1 footer-contact wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
-                            <h3>Contact</h3>
-                            <p><i class="fas fa-map-marker-alt"></i> Via Rossini 10, 10136 Turin Italy</p>
-                            <p><i class="fas fa-phone"></i> Phone: (0039) 333 12 68 347</p>
-                            <p><i class="fas fa-envelope"></i> Email:hello@domain.com</a></p>
-                            <p><i class="fab fa-skype"></i> Skype: you_online</p>
-                        </div>
-                        <div class="col-md-4 footer-links wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
-                            <div class="row">
-                                <div class="col">
-                                    <h3>Links</h3>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <p><a class="scroll-link" href="#top-content">Home</a></p>
-                                    <p><a href="#">Features</a></p>
-                                    <p><a href="#">How it works</a></p>
-                                    <p><a href="#">Our clients</a></p>
-                                </div>
-                                <div class="col-md-6">
-                                    <p><a href="#">Plans &amp; pricing</a></p>
-                                    <p><a href="#">Affiliates</a></p>
-                                    <p><a href="#">Terms</a></p>
-                                </div>
-                            </div>
-                        </div>
+<div class="footer-bottom bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 footer-about wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+                <h3>About us</h3>
+                <p>
+                    We are a young company always looking for new and creative ideas to help you with our products in your everyday work.
+                </p>
+                <p>© Company Inc.</p>
+            </div>
+            <div class="col-md-4 offset-md-1 footer-contact wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
+                <h3>Contact</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Via Rossini 10, 10136 Turin Italy</p>
+                <p><i class="fas fa-phone"></i> Phone: (0039) 333 12 68 347</p>
+                <p><i class="fas fa-envelope"></i> Email:hello@domain.com</a>
+                </p>
+                <p><i class="fab fa-skype"></i> Skype: you_online</p>
+            </div>
+            <div class="col-md-4 footer-links wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+                <div class="row">
+                    <div class="col">
+                        <h3>Links</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><a class="scroll-link" href="#top-content">Home</a></p>
+                        <p><a href="#">Features</a></p>
+                        <p><a href="#">How it works</a></p>
+                        <p><a href="#">Our clients</a></p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><a href="#">Plans &amp; pricing</a></p>
+                        <p><a href="#">Affiliates</a></p>
+                        <p><a href="#">Terms</a></p>
                     </div>
                 </div>
             </div>
-        
-
-   
-          
-    <!-- Clients -->
-    
-    <!-- Contact -->
+        </div>
+    </div>
+</div>
 
 
-    <!-- Footer -->
-   
+
+
+<!-- Clients -->
+
+<!-- Contact -->
+
+
+<!-- Footer -->
+
+<!-- Bootstrap core JavaScript -->
+<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+<!-- Plugin JavaScript -->
+<script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+
+<!-- Contact form JavaScript -->
+<script src="{% static 'js/jqBootstrapValidation.js' %}"></script>
+<script src="{% static 'js/contact_me.js' %}"></script>
+
+<!-- Custom scripts for this template -->
+<script src="{% static 'js/agency.min.js' %}"></script>
