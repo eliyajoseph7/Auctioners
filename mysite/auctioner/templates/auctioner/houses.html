@@ -1,7 +1,356 @@
-{% extends 'auctioner/base.html' %}
-{% block content %}
+{% extends 'custom/main.html' %} {% block content %}
 
-<p>House owner underconstruction</p>
+<div class="row pt-3 d-flex">
+    <div class="col-md-3">
+        <div class="bg-light border-right" id="sidebar-wrapper">
+            <div class="sidebar-heading text-center">Auctioner </div>
+            <div class="list-group list-group-flush">
+                <a href="#" class="list-group-item list-group-item-action bg-light">Home</a>
+                <a href="#" class="list-group-item list-group-item-action bg-light">Shortcuts</a>
+                <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
+                <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
+                <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
+                <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <nav class="navbar navbar-expand-lg navbar-light shadow flex justify-content-between ">
+
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            <ul class="d-inline-flex float-right">
+                <li class="nav-item dropdown show d-block">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">Filter by</a>
+                    <div class="dropdown-menu show" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 40px, 0px); top: 0px; left: 0px; will-change: transform;">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <!-- Section: Block Content -->
+        <div class="container-fluid">
+            <div class="text-center mt-5">
+
+                <!-- Grid row -->
+                <div class=" row ">
+                    <div class="col-lg-4 col-md-12 ">
+
+                        <div class=" ">
+                            <a href="#">
+                                <img src="https://mdbootstrap.com/img/Photos/Others/images/58.jpg " class="img-fluid " alt="Sample project image ">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 ">
+                        <div class="view overlay rounded z-depth-1 ">
+                            <h3>Title</h3>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi, labore ea error esse quia qui laborum ex sunt iure asperiores sapiente quos placeat fugit quae, dicta illum, doloribus sit. Repellat.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 ">
+                        <div class="view overlay rounded z-depth-1 ">
+                            <h3>Status</h3>
+                            <p class="badge badge-success">available</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 ">
+                        <div class="view overlay rounded z-depth-1 ">
+                            <h3>Action</h3>
+                            <a href="#" class="btn btn-outline-warning">Reserve</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Grid row -->
+
+            </div>
+            <div class="text-center mt-5">
+
+                <!-- Grid row -->
+                <div class=" row ">
+                    <div class="col-lg-4 col-md-12 ">
+
+                        <div class=" ">
+                            <a href="#">
+                                <img src="https://mdbootstrap.com/img/Photos/Others/images/58.jpg " class="img-fluid " alt="Sample project image ">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 ">
+                        <div class="view overlay rounded z-depth-1 ">
+                            <h3>Title</h3>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi, labore ea error esse quia qui laborum ex sunt iure asperiores sapiente quos placeat fugit quae, dicta illum, doloribus sit. Repellat.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 ">
+                        <div class="view overlay rounded z-depth-1 ">
+                            <h3>Status</h3>
+                            <p class="badge badge-danger">reserved</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 ">
+                        <div class="view overlay rounded z-depth-1 ">
+                            <h3>Action</h3>
+                            <a href="#" class="btn btn-outline-warning disabled">Reserve</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Grid row -->
+
+            </div>
+            <div class="text-center mt-5">
+
+                <!-- Grid row -->
+                <div class=" row ">
+                    <div class="col-lg-4 col-md-12 ">
+
+                        <div class=" ">
+                            <a href="#">
+                                <img src="https://mdbootstrap.com/img/Photos/Others/images/58.jpg " class="img-fluid " alt="Sample project image ">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 ">
+                        <div class="view overlay rounded z-depth-1 ">
+                            <h3>Title</h3>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi, labore ea error esse quia qui laborum ex sunt iure asperiores sapiente quos placeat fugit quae, dicta illum, doloribus sit. Repellat.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 ">
+                        <div class="view overlay rounded z-depth-1 ">
+                            <h3>Status</h3>
+                            <p class="badge badge-success">available</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 ">
+                        <div class="view overlay rounded z-depth-1 ">
+                            <h3>Action</h3>
+                            <a href="#" class="btn btn-outline-warning">Reserve</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Grid row -->
+
+            </div>
+            <div class="text-center mt-5">
+
+                <!-- Grid row -->
+                <div class=" row ">
+                    <div class="col-lg-4 col-md-12 ">
+
+                        <div class=" ">
+                            <a href="#">
+                                <img src="https://mdbootstrap.com/img/Photos/Others/images/58.jpg " class="img-fluid " alt="Sample project image ">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 ">
+                        <div class="view overlay rounded z-depth-1 ">
+                            <h3>Title</h3>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi, labore ea error esse quia qui laborum ex sunt iure asperiores sapiente quos placeat fugit quae, dicta illum, doloribus sit. Repellat.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 ">
+                        <div class="view overlay rounded z-depth-1 ">
+                            <h3>Status</h3>
+                            <p class="badge badge-success">available</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 ">
+                        <div class="view overlay rounded z-depth-1 ">
+                            <h3>Action</h3>
+                            <a href="#" class="btn btn-outline-warning">Reserve</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Grid row -->
+
+            </div>
+            <div class="text-center mt-5">
+
+                <!-- Grid row -->
+                <div class=" row ">
+                    <div class="col-lg-4 col-md-12 ">
+
+                        <div class=" ">
+                            <a href="#">
+                                <img src="https://mdbootstrap.com/img/Photos/Others/images/58.jpg " class="img-fluid " alt="Sample project image ">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 ">
+                        <div class="view overlay rounded z-depth-1 ">
+                            <h3>Title</h3>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi, labore ea error esse quia qui laborum ex sunt iure asperiores sapiente quos placeat fugit quae, dicta illum, doloribus sit. Repellat.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 ">
+                        <div class="view overlay rounded z-depth-1 ">
+                            <h3>Status</h3>
+                            <p class="badge badge-success">available</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 ">
+                        <div class="view overlay rounded z-depth-1 ">
+                            <h3>Action</h3>
+                            <a href="#" class="btn btn-outline-warning">Reserve</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Grid row -->
+
+            </div>
+            <div class="text-center mt-5">
+
+                <!-- Grid row -->
+                <div class=" row ">
+                    <div class="col-lg-4 col-md-12 ">
+
+                        <div class=" ">
+                            <a href="#">
+                                <img src="https://mdbootstrap.com/img/Photos/Others/images/58.jpg " class="img-fluid " alt="Sample project image ">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 ">
+                        <div class="view overlay rounded z-depth-1 ">
+                            <h3>Title</h3>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi, labore ea error esse quia qui laborum ex sunt iure asperiores sapiente quos placeat fugit quae, dicta illum, doloribus sit. Repellat.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 ">
+                        <div class="view overlay rounded z-depth-1 ">
+                            <h3>Status</h3>
+                            <p class="badge badge-success">available</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 ">
+                        <div class="view overlay rounded z-depth-1 ">
+                            <h3>Action</h3>
+                            <a href="#" class="btn btn-outline-warning">Reserve</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Grid row -->
+
+            </div>
+        </div>
+
+
+        <div class="container my-5">
+
+
+            <!-- Section: Block Content -->
+            <section>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card card-list">
+                            <div class="card-header white d-flex justify-content-between align-items-center py-3">
+                                <p class="h5-responsive font-weight-bold mb-0">Last Orders</p>
+                                <ul class="list-unstyled d-flex align-items-center mb-0">
+                                    <li><i class="far fa-window-minimize fa-sm pl-3"></i></li>
+                                    <li><i class="fas fa-times fa-sm pl-3"></i></li>
+                                </ul>
+                            </div>
+                            <div class="card-body">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Order ID</th>
+                                            <th scope="col">Item</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row" style="width: 300px;">
+                                                <a class="text-primary">
+                                                    <img src="https://mdbootstrap.com/img/Photos/Others/images/58.jpg " class="img-thumbnail w-100" alt="Sample project image ">
+                                                </a>
+                                            </th>
+                                            <td>
+                                                <p>uhudnjd</p>
+                                            </td>
+                                            <td><span class="badge badge-success">available</span></td>
+                                            <td class="pt-2 pb-0"><a href="#" class="btn btn-primary">Reserve</a></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" style="width: 300px;">
+                                                <a class="text-primary">
+                                                    <img src="https://mdbootstrap.com/img/Photos/Others/images/58.jpg " class="img-thumbnail w-100" alt="Sample project image ">
+                                                </a>
+                                            </th>
+                                            <td>
+                                                <p>uhudnjd</p>
+                                            </td>
+                                            <td><span class="badge badge-success">available</span></td>
+                                            <td class="pt-2 pb-0"><a href="#" class="btn btn-primary">Reserve</a></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" style="width: 300px;">
+                                                <a class="text-primary">
+                                                    <img src="https://mdbootstrap.com/img/Photos/Others/images/58.jpg " class="img-thumbnail w-100" alt="Sample project image ">
+                                                </a>
+                                            </th>
+                                            <td>
+                                                <p>uhudnjd</p>
+                                            </td>
+                                            <td><span class="badge badge-danger">reserved</span></td>
+                                            <td class="pt-2 pb-0"><a href="#" class="btn btn-primary disabled">Reserve</a></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" style="width: 300px;">
+                                                <a class="text-primary">
+                                                    <img src="https://mdbootstrap.com/img/Photos/Others/images/58.jpg " class="img-thumbnail w-100" alt="Sample project image ">
+                                                </a>
+                                            </th>
+                                            <td>
+                                                <p>uhudnjd</p>
+                                            </td>
+                                            <td><span class="badge badge-success">available</span></td>
+                                            <td class="pt-2 pb-0"><a href="#" class="btn btn-primary">Reserve</a></td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="card-footer white py-3 d-flex justify-content-between">
+                                <button class="btn btn-primary btn-md px-3 my-0 mr-0">Place New Order</button>
+                                <button class="btn btn-light btn-md px-3 my-0 ml-0">View All Orders</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            <!-- Section: Block Content -->
+
+
+        </div>
+    </div>
+</div>
+
+<!-- Section: Block Content -->
+
 
 {% endblock content %}
-          
