@@ -39,40 +39,28 @@
       </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ml-auto">
-
-                 {% if request.user.is_staff %}
-                <!--This will only be visible to admin and house owner -->
-
-                 <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="{% url 'houses' %}">Home</a>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#services">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="{% url 'hupload' %}">Upload House Details</a>
+                        <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="{% url 'hcart' %}">Cart view</a>
+                        <a class="nav-link js-scroll-trigger" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="{% url 'hprofile' %}">profile</a>
-                    </li>
-
-                    {% else %}
-                     <!--This will only be visible to renters -->
-                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="{% url 'rindex' %}">Home</a>
+                        <a class="nav-link js-scroll-trigger" href="#team">Team</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="{% url 'rcart' %}">Reserved Order</a>
+                        <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="{% url 'rprofile' %}">Profile</a>
+                        <a class="nav-link js-scroll-trigger text-warning" href="{% url 'logiin' %}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger text-warning" href="{% url 'register' %}">Register</a>
                     </li>
 
-                    {% endif %}
-                     <!--This will only be visible to both users-->
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger text-warning" href="{% url 'index' %}">Logout</a>
-                    </li>
                 </ul>
             </div>
         </div>
