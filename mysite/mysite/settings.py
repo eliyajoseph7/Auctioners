@@ -84,10 +84,10 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'AuctionersDB',
+        'NAME': 'auctioners',
         'PORT': '5432',
         'USER': 'postgres',
-        'PASSWORD': 'newpassword',
+        'PASSWORD': '1956',
         'HOST': 'localhost',
     }
 }
