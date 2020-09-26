@@ -1,0 +1,102 @@
+{% extends 'custom/main2.html' %}
+{% load static %}
+{% block content %}
+<style type="text/css">
+    .box-element{
+        box-shadow:hsl(0, 0%, 80%,) 0 0 16px;
+        background-color:#fff;
+        border-radius: 4px;
+        padding: 10px;
+    }
+
+    .cart-row{
+    	display: flex;
+    	align-items: flex-stretch;
+    	padding-bottom: 10px;
+    	margin-bottom: 10px;
+    	border-bottom: 1px solid #acecec;
+    }
+    .row-image{
+    	width: 100px;
+    }
+    .quantity{
+    	display: inline-block;
+    	font-weight: 700;
+    	padding-right: 10px;
+    }
+    .chg-quantity{
+    	width: 12px;
+    	cursor: pointer;
+    	display: block;
+    	margin-top: 5px;
+    	transition: 1s;
+    }
+    .chg-quantity:hover{
+    	opacity: .6;
+
+    }
+    .nathan{
+    	margin-left: : 1px;
+    }
+</style>
+<div class="row justify-content-center" >
+	<div class="col-lg-8">
+		<div class="box-element">
+			<a class="btn btn-outline-dark" href="{% url 'index' %}">&#x2190; continue finding</a>
+
+			<br>
+			<br>
+
+
+
+			<table class="table">
+				<tr>
+					<th><h5>Houses:  <strong>{{order.get_cart_items}} </strong></h5></th>
+					<th><h5>Total: <strong>Tsh {{order.get_cart_total|floatformat:2}} </strong></h5></th>
+					<th>
+						<a style="float: right; margin: 5px" class="btn btn-dark text-warning" href="{% url 'checkout' %}">checkout</a>
+					</th>
+
+
+				</tr>
+				
+			</table>
+			
+		</div>
+		<br>
+		<div class="box-element">
+			<div class="cart-row">
+			<div style="flex:2"></div>
+			<div style="flex:2"><strong>Street</strong></div>
+			<div style="flex:1"><strong>Price </strong></div>
+			<div style="flex:1"><strong>Quantity</strong></div>
+			<div style="flex:1"><strong>Total</strong></div>
+		</div>
+
+
+		{% for item in items %}
+
+		<div class="cart-row">
+			<div style="flex:2"><img class="row-image" src="{{item.house.imageURL}}"></div>
+			<div style="flex:2">{{ item.house.street}}</div>
+			<div style="flex:1">Tsh {{ item.house.price|floatformat:2}}</div>
+			<div style="flex:1">
+				<p class="quantity">{{item.quantity}}</p>
+				<div class="quantity">
+					<img data-house="{{item.house.id}}"  data-action="add" class="chg-quantity update-cart" src="{% static 'img/arrow-up.png' %}">
+					<img data-house={{item.house.id}} data-action="remove" class="chg-quantity update-cart" src="{% static 'img/arrow-down.png' %}">
+					
+				</div>
+			</div>
+			<div style="flex:1">Tsh {{ item.get_total|floatformat:2}}</div>
+		</div>
+
+		{% endfor %}
+
+	</div>
+
+</div>
+
+</div>
+
+{% endblock content %} 

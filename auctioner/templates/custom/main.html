@@ -1,0 +1,157 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>The Auctioner</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %} " rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/agency.min.css' %}" rel="stylesheet">
+
+    <style>
+        hr.divider {
+            max-width: 25rem;
+            border-width: 0.2rem;
+            border-color: #6C757D;
+        }
+        
+        .sidebar-heading {
+            padding: 0.875rem 1.25rem;
+            font-size: 1.2rem;
+        }
+        
+        .btn:hover {
+            color: #fff;
+        }
+
+        .cart-icon{
+             width: 25px;
+             display: inline-block;
+             margin-left: 15px;
+        }
+        .cart-total{
+            display: block;
+            text-align: center;
+            color: #fff;
+            background-color: red;
+            width: 20px;
+            height: 25px;
+            border-radius:50%;
+            font-size:14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger text-warning" href="{% url 'houses' %}">JNG Auctioner App</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+
+                 {% if request.user.is_staff %}
+                <!--This will only be visible to admin and house owner -->
+
+                 <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="{% url 'houses' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="{% url 'hupload' %}">Upload House Details</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="{% url 'hcart' %}">Cart view</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="{% url 'hprofile' %}">profile</a>
+                    </li>
+
+                    {% else %}
+                     <!--This will only be visible to renters -->
+                     <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="{% url 'rindex' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="{% url 'rcart' %}">Reserved Order</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="{% url 'rprofile' %}">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <img class="cart-icon" src="{% static 'img/cart.png' %}">
+                    </li>
+                     <p class="cart-total">0</p>
+
+                    {% endif %}
+                     <!--This will only be visible to both users-->
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger text-warning" href="{% url 'logiin' %}">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+    </nav>
+
+    <section class="page-section" style="background-color: aliceblue;">
+
+        <div class="content-inner">
+            {% block content %} {% endblock content %}
+
+
+        </div>
+    </section>
+</body>
+
+</html>
+
+
+
+{% include 'footer/footer.html' %}
+
+
+
+
+<!-- Clients -->
+
+<!-- Contact -->
+
+
+<!-- Footer -->
+
+<!-- Bootstrap core JavaScript -->
+<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+<!-- Plugin JavaScript -->
+<script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+
+<!-- Contact form JavaScript -->
+<script src="{% static 'js/jqBootstrapValidation.js' %}"></script>
+<script src="{% static 'js/contact_me.js' %}"></script>
+
+<!-- Custom scripts for this template -->
+<script src="{% static 'js/agency.min.js' %}"></script>

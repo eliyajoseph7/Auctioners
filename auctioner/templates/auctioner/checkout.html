@@ -1,0 +1,242 @@
+{% extends 'custom/main2.html' %}
+{% load static %}
+{% block content %}
+<style type="text/css">
+    .box-element{
+        box-shadow:hsl(0, 0%, 80%,) 0 0 16px;
+        background-color:#fff;
+        border-radius: 4px;
+        padding: 10px;
+    }
+    .form-field{
+    	width: 280px;
+    	display: inline-block;
+    	padding: 5px;
+
+    }
+    .hidden{
+    	display: none!important;
+    }
+    .cart-row{
+    	display: flex;
+    	align-items: flex-stretch;
+    	padding-bottom: 10px;
+    	margin-bottom: 10px;
+    	border-bottom: 1px solid #acecec;
+    }
+    .row-image{
+    	width: 100px;
+    }
+</style>
+
+<div class="row justify-content-center">
+	<div class="col-lg-6">
+		<div class="box-element" id="form-wrapper">
+			<form id="form">
+				<div id="user-info">
+					<div class="form-field">
+							<input required class="form-control" type="text" name="name" placeholder="Name..">
+					</div>
+					<div class="form-field">
+							<input required class="form-control" type="email" name="email" placeholder="Email..">
+                    </div>
+					
+				</div>
+
+				<div id="shipping-info">
+					<hr>
+						<p>Location Information:</p>
+						<hr>
+						<div class="form-field">
+							<input class="form-control" type="text" name="address" placeholder="Address..">
+						</div>
+						<div class="form-field">
+							<input class="form-control" type="text" name="city" placeholder="City..">
+						</div>
+						<div class="form-field">
+							<input class="form-control" type="text" name="state" placeholder="State..">
+						</div>
+						<div class="form-field">
+							<input class="form-control" type="text" name="zipcode" placeholder="Zip code..">
+						</div>
+						<div class="form-field">
+							<input class="form-control" type="text" name="country" placeholder="Zip code..">
+                        </div>
+					
+				</div>
+				<hr>
+
+				<input type="submit" id="form-button" class="btn btn-dark text-warning" value="Continue">
+			</form>
+		</div>
+
+		<br>
+
+		<div class="box-element hidden" id="payment-info">
+			<small>paypal options</small>
+			<!-- <button id="make-payment" class="btn btn-dark text-white">Make Payment</button> -->
+			<div id="paypal-button-container"></div>
+			
+		</div>
+	</div>
+
+
+	<div class="col-lg-4">
+		<div class="box-element">
+			<a class="btn btn-outline-dark" href="{% url 'rcart' %}">&#x2190; Back to Cart</a>
+			<hr>
+
+			<h3>Reserve summary</h3>
+
+			<hr> 
+            
+            {% for item in items %}
+			<div class="cart-row">
+					<div style="flex:2"><img class="row-image" src="{{item.house.imageURL}}"></div>
+					<div style="flex:2"><p>{{item.house.street}}</p></div>
+					<div style="flex:2"><p>Tsh {{ item.house.price|floatformat:2}}</p></div>
+					<div style="flex:1"><p>x2{{item.quantity}}</p></div>
+                   </div>
+			{% endfor %}
+		
+
+		<h5>Items: {{ order.get_cart_items}}</h5>
+		<h5>Total: Tsh {{ order.get_cart_total|floatformat:2}}</h5>
+		</div>
+
+	</div>
+</div>
+
+<script src="https://www.paypal.com/sdk/js?client-id=AYQG0qHQRJJ1HLXG4455LKQ5xWQakNA6EUzJM5ahTVI0kbPW82X9S3-156KB3-swWQFunCqGkLcxWgqQ&currency=USD&disable-funding=credit"></script>
+
+<script>
+	 var total = '{{order.get_cart_total}}'
+    // Render the PayPal button into #paypal-button-container
+    paypal.Buttons({
+
+    	style: {
+            color:  'blue',
+            shape:  'rect',
+        },
+
+        // Set up the transaction
+        createOrder: function(data, actions) {
+            return actions.order.create({
+                purchase_units: [{
+                    amount: {
+                        value:parseFloat(total).toFixed(2)
+                    }
+                }]
+            });
+        },
+
+        // Finalize the transaction
+        onApprove: function(data, actions) {
+            return actions.order.capture().then(function(details) {
+                // Show a success message to the buyer
+              submitFormData()
+            });
+        }
+
+    }).render('#paypal-button-container');
+</script>
+
+
+<script type="text/javascript">
+	var shipping = '{{order.shipping}}'
+	// var total = '{{order.get_cart_total|floatformat:2}}'
+
+	if(shipping == 'False'){
+		document.getElementById('shipping-info').innerHTML =''
+	}
+
+	if(user != 'AnonymousUser'){
+		document.getElementById('user-info').innerHTML = ''
+	}
+
+	if (shipping == 'False' && user != 'AnonymousUser') {
+	//hide the entire form
+
+	document.getElementById('form-wrapper').classList.add("hidden");
+
+	//show payment if logged in user wants to buy an item thet does not reuire shipping
+	document.getElementById('payment-info').classList.remove("hidden");
+		
+	}
+
+	var form = document.getElementById('form')
+	form.addEventListener('submit', function(e){
+		e.preventDefault()
+		console.log('form submitted...')
+		document.getElementById('form-button').classList.add("hidden");
+		document.getElementById('payment-info').classList.remove("hidden");
+	})
+
+	// document.getElementById('make-payment').addEventListener('click', function(e){
+		// submitFormData( )
+	// })
+
+	function submitFormData(){
+		console.log('Payment button clicked')
+
+
+		var userFormData = {
+			'name':null,
+			'email':null,
+			'total':total,
+		}
+
+		var shippingInfo = {
+			'address':null,
+			'city':null,
+			'state':null,
+			'zipcode':null,
+		}
+
+
+		if(shipping != 'False'){
+			shippingInfo.address = form.address.value
+			shippingInfo.city = form.city.value
+			shippingInfo.state = form.state.value
+			shippingInfo.zipcode = form.zipcode.value
+		}
+
+		if( user == 'AnonymousUser'){
+			userFormData.name = form.name.value
+			userFormData.email = form.email.value
+		}
+
+
+		var  url ='/process_order/'
+
+		fetch(url,{
+			method: 'POST',
+			headers:{
+				'Content-TYpe':'application/json',
+				'X-CSRFToken':csrftoken,
+
+			},
+			body:JSON.stringify({'form':userFormData, 'shipping':shippingInfo})
+		})
+		.then((response) => response.json())
+		.then((data) => {
+			console.log('success:', data);
+			alert('Tansaction complete');
+			
+
+
+			rcart = {}
+			document.cookie = 'rcart=' + JSON.stringify(rcart) + ";domain;path=/"
+
+
+
+			window.location.href ="{% url 'index' %}"
+		})
+
+	}
+
+
+
+</script>
+
+{% endblock content %}

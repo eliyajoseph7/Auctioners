@@ -1,0 +1,217 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>The Auctioner</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %} " rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/agency.min.css' %}" rel="stylesheet">
+
+    <style>
+        hr.divider {
+            max-width: 25rem;
+            border-width: 0.2rem;
+            border-color: #6C757D;
+        }
+        
+        .sidebar-heading {
+            padding: 0.875rem 1.25rem;
+            font-size: 1.2rem;
+        }
+        
+        .btn:hover {
+            color: #fff;
+        }
+    </style>
+      <style>
+        hr.divider {
+            max-width: 25rem;
+            border-width: 0.2rem;
+            border-color: #6C757D;
+        }
+        
+        .sidebar-heading {
+            padding: 0.875rem 1.25rem;
+            font-size: 1.2rem;
+        }
+        
+        .btn:hover {
+            color: #fff;
+        }
+
+        .cart-icon{
+             width: 25px;
+             display: inline-block;
+             margin-left: 15px;
+        }
+        .cart-total{
+            display: block;
+            text-align: center;
+            color: #fff;
+            background-color: red;
+            width: 20px;
+            height: 25px;
+            border-radius:50%;
+            font-size:14px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        var user = '{{request.user}}'
+
+        function getToken(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        const csrftoken = getToken('csrftoken');
+
+
+        function getCookie(name){
+            //split cookie value and get all individual name=value pairs in an arrey
+
+            var cookieArr = document.cookie.split(";");
+
+
+            //loop through the array elements
+            for(var i =0; i< cookieArr.length; i++){
+                var cookiePair = cookieArr[i].split("=");
+
+
+                //removing whitespace
+
+                if(name == cookiePair[0].trim()){
+
+                    // decode the cookie value and return
+                    return decodeURIComponent(cookiePair[1]);
+                }
+            }
+
+            //return null if not found
+            return null;
+        }
+
+        var rcart = JSON.parse(getCookie('rcart'))
+
+        if (rcart == undefined) {
+            rcart = {}
+            console.log('Cart was created')
+            document.cookie = 'rcart=' + JSON.stringify(rcart) + ";domain;path=/"
+        }
+
+
+        console.log('rcart:', rcart)
+
+
+    </script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger text-warning" href="{% url 'houses' %}">JNG Auctioner App</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+
+                
+                     <!--This will only be visible to renters -->
+                     <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger text-warning" href="{% url 'index' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger text-warning" href="{% url 'logiin' %}">Login</a>
+                    </li>
+                   
+                     <li class="nav-item">
+                         <a class="nav-link js-scroll-trigger text-warning" href="{% url 'rcart' %}">
+                        <img class="cart-icon" href="{% url 'logiin' %}" src="{% static 'img/cart.png' %}">
+                    </a>
+                    </li>
+                     <p class="cart-total">{{cartItems}}</p>
+
+
+                     <!--This will only be visible to both users-->
+        
+                </ul>
+            </div>
+        </div>
+
+
+    </nav>
+    
+    <section class="page-section" style="background-color: aliceblue;">
+
+        <div class="content-inner">
+            {% block content %} {% endblock content %}
+
+
+        </div>
+    </section>
+</body>
+
+</html>
+
+
+
+{% include 'footer/footer.html' %}
+
+
+
+
+<!-- Clients -->
+
+<!-- Contact -->
+
+
+<!-- Footer -->
+
+<!-- Bootstrap core JavaScript -->
+<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+<!-- Plugin JavaScript -->
+<script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+
+<!-- Contact form JavaScript -->
+<script src="{% static 'js/jqBootstrapValidation.js' %}"></script>
+<script src="{% static 'js/contact_me.js' %}"></script>
+
+<!-- Custom scripts for this template -->
+<script src="{% static 'js/agency.min.js' %}"></script>
+
+<script src="{% static 'js/cart.js' %}"></script>
+
