@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 from django.db import models
 from django.contrib.auth.models import User
 from PIL import Image
@@ -112,23 +112,3 @@ class ShippingAddress(models.Model):
 
 	def __str__(self):
 		return self.address
-||||||| merged common ancestors
-=======
-from django.db import models
-from PIL import Image
-
-# Create your models here.
-class HouseDetails(models.Model):
-	n_rooms = models.IntegerField()
-	TYPE = (
-           ('Masters','Masters'),
-           ('Non Masters','Non Masters'),
-           ('I dont Know','I dont Know')
-		)
-	date_created = models.DateTimeField(auto_now_add=True,null=True)
-	location = models.CharField(max_length=200, null=True)
-	typee = models.CharField(max_length=200, null=True,choices=TYPE)
-	short_disc = models.CharField(max_length=500,null=True)
-	image = models.ImageField(default="try.svg", null=True, blank=True)
-
->>>>>>> 441a40e02279772e92e3a98dc47dca671f506e39

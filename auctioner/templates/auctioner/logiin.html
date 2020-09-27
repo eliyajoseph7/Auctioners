@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 {% extends 'custom/main2.html' %} {% block content %}
 
 <div class="container">
@@ -43,46 +43,3 @@
 </div>
 
 {% endblock content %}
-||||||| merged common ancestors
-=======
-{% extends 'auctioner/hbase.html' %}
-{% block content %}
-
-<div class="col-lg-6 bg-white">
-              <div class="form d-flex align-items-center">
-                <div class="content">
-                  <form method="post" class="form-validate" action="">
-
-                    {% csrf_token %}
-                    <div class="form-group">
-                      <input id="login-username" type="text" name="username" required data-msg="Please enter your username" class="input-material">
-                      <label for="login-username" class="label-material">User Name</label>
-                    </div>
-                    <div class="form-group">
-                      <input id="login-password" type="password" name="password" required data-msg="Please enter your password" class="input-material">
-                      <label for="login-password" class="label-material">Password</label>
-                    </div>
-                     <div class="form-group">
-                     <button id="login" type="submit" name="loginSubmit" class="btn btn-primary">Login</button>
-                   </div>
-
-             {% for message in messages %}
-
-                    <div class="alert alert-warning {{ message.tags }} alert-dismissible" role="alert" timeout = 500 >
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-              </button>
-             {{ message }}
-                    </div>
-             {% endfor %}
-   
-             
-                    <!-- This should be submit button but I replaced it with <a> for demo purposes-->
-                  </form><a href="{% url 'house' %}" class="forgot-pass">Forgot Password?</a><br><small>Do not have an account? </small><a href="{% url 'register' %}" class="signup">Signup</a>
-                </div>
-              </div>
-            </div>
-
-{% endblock content %}
-          
->>>>>>> 441a40e02279772e92e3a98dc47dca671f506e39
