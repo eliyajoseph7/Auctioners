@@ -1,22 +1,22 @@
- {% extends 'custom/main2.html' %}
-{% load static %}
-{% block content %}
-    <div class="row">
-        {% for house in house %}
-        <div class="col-lg-4">
-            <img class="thumbnail" src="{{house.imageURL}}">
-            <div class="box-element product">
-                <h6><strong>{{house.street}}</strong></h6>
-                <hr>
-
-                <button data-product="{{house.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
-                
-                <a class="btn btn-outline-success" href="#">View</a>
-                <h4 style="display: inline-block; float: right"><strong>${{house.price}}</strong></h4>
-
-            </div>
+ {% extends 'custom/main2.html' %} {% load static %} {% block content %}
+<div class="row">
+    {% for house in house %}
+    <div class="col-md-3">
+        <div style="height: 30vh;" class="house">
+            <a href="{{house.imageURL}}"><img class="thumbnail h-100 w-100" src="{{house.imageURL}}" style="object-fit: cover;"></a>
         </div>
-        {% endfor %}
+        <div class="box-element product">
+            <h6><strong>{{house.street}}</strong></h6>
+            <hr>
+
+            <button data-product="{{house.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+
+            <a class="btn btn-outline-success" href="#">View</a>
+            <h4 style="display: inline-block; float: right"><strong>${{house.price}}</strong></h4>
+
+        </div>
     </div>
+    {% endfor %}
+</div>
 
 {% endblock content %}

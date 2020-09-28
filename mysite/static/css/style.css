@@ -1,122 +1,40 @@
-<<<<<<< HEAD:mysite/static/css/style.css
-.top {
-    background: linear-gradient(rgba(109, 109, 109), rgba(255, 255, 255));
-    text-align: center;
-    height: 70vh;
-}
-
-.top h1 {
-    padding-top: 10%;
-}
-
-.top h4 {
-    text-transform: uppercase;
-}
-
-
-/* .top p {
+ .top {
+     background: linear-gradient(rgba(109, 109, 109), rgba(255, 255, 255));
+     text-align: center;
+     height: 70vh;
+ }
+ 
+ .top h1 {
+     padding-top: 10%;
+ }
+ 
+ .top h4 {
+     text-transform: uppercase;
+ }
+ /* .top p {
     padding-right: 10%;
     padding-left: 10%;
     margin-bottom: 10%;
 } */
-
-
-/* @media (max-width: 768px) {
+ /* @media (max-width: 768px) {
     .top h1 {
         display: none;
     }
 } */
-
-.form-control:focus {
-    box-shadow: none;
-}
-
-.form-control-underlined {
-    border-width: 0;
-    border-bottom-width: 1px;
-    border-radius: 0;
-    padding-left: 0;
-}
-
-#cart-icon{
-    width: 25px;
-    display: inline-block;
-    margin-left: 15px;
-||||||| merged common ancestors
-.top {
-    background: linear-gradient(rgba(109, 109, 109), rgba(255, 255, 255));
-    text-align: center;
-    height: 70vh;
-}
-
-.top h1 {
-    padding-top: 10%;
-}
-
-.top h4 {
-    text-transform: uppercase;
-}
-
-
-/* .top p {
-    padding-right: 10%;
-    padding-left: 10%;
-    margin-bottom: 10%;
-} */
-
-
-/* @media (max-width: 768px) {
-    .top h1 {
-        display: none;
-    }
-} */
-
-.form-control:focus {
-    box-shadow: none;
-}
-
-.form-control-underlined {
-    border-width: 0;
-    border-bottom-width: 1px;
-    border-radius: 0;
-    padding-left: 0;
-=======
-.top {
-    background: linear-gradient(rgba(109, 109, 109), rgba(255, 255, 255));
-    text-align: center;
-    height: 70vh;
-}
-
-.top h1 {
-    padding-top: 10%;
-}
-
-.top h4 {
-    text-transform: uppercase;
-}
-
-
-/* .top p {
-    padding-right: 10%;
-    padding-left: 10%;
-    margin-bottom: 10%;
-} */
-
-
-/* @media (max-width: 768px) {
-    .top h1 {
-        display: none;
-    }
-} */
-
-.form-control:focus {
-    box-shadow: none;
-}
-
-.form-control-underlined {
-    border-width: 0;
-    border-bottom-width: 1px;
-    border-radius: 0;
-    padding-left: 0;
->>>>>>> 441a40e02279772e92e3a98dc47dca671f506e39:mysite/mysite/static/css/style.css
-}
+ 
+ .form-control:focus {
+     box-shadow: none;
+ }
+ 
+ .form-control-underlined {
+     border-width: 0;
+     border-bottom-width: 1px;
+     border-radius: 0;
+     padding-left: 0;
+ }
+ 
+ #cart-icon {
+     width: 25px;
+     display: inline-block;
+     margin-left: 15px;
+ }

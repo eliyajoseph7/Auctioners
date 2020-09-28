@@ -1,0 +1,7 @@
+.house img {
+    transition: 0.3s;
+}
+
+.house img:hover {
+    transform: scale(1.1);
+}
