@@ -1,7 +1,91 @@
-.house img {
+/* .parent .thumb img {
+    width: 100%;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
     transition: 0.3s;
+} */
+
+
+/* .parent:hover .thumb img {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+} */
+
+.parent .thumb {
+    -webkit-border-radius: 7px 7px 0 0;
+    -moz-border-radius: 7px 7px 0 0;
+    border-radius: 7px 7px 0 0;
+    overflow: hidden;
 }
 
-.house img:hover {
-    transform: scale(1.1);
+.parent .thumb img {
+    width: 100%;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.5s;
 }
+
+.parent:hover .thumb img {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    /* opacity: 0.3; */
+}
+
+.thumb a {
+    display: none;
+    font-size: 35px;
+    color: #ffffff !important;
+    font-family: sans-serif;
+    text-align: center;
+    margin: auto;
+    position: absolute;
+    top: 20%;
+    left: 0;
+    bottom: 50%;
+    right: 0;
+    height: 50px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+/* .thumb a i:hover {
+    color: #FB9611;
+} */
+
+.parent:hover .thumb:before,
+.parent:focus .thumb:before {
+    display: block;
+}
+
+.parent:hover .thumb a,
+.parent:focus .thumb a {
+    display: block;
+}
+
+
+/* .thumb:before {
+    content: "";
+    display: none;
+    height: 30vh;
+    width: 93%;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 5;
+    background-color: rgba(52, 73, 94, 0.75);
+} */
