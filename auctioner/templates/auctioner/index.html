@@ -1,7 +1,7 @@
  {% extends 'custom/main2.html' %} {% load static %} {% block content %}
 <div class="row m-auto">
     {% for house in house %}
-    <div class="col-md-3">
+    <div class="col-md-3 mb-3">
         <div class="parent">
             <div class="thumb" style="height: 30vh;">
                 <img class="thu mbnail h-100" src="{{house.imageURL}}" style="object-fit: cover;">
@@ -16,9 +16,9 @@
 
             <hr>
 
-            <button data-product="{{house.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+            <button data-house="{{house.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
 
-            <a class="btn btn-outline-success" href="#">View</a>
+            <a class="btn btn-outline-success" href="{% url 'theHouse' house.id %}">View</a>
             <h4 style="display: inline-block; float: right"><strong>${{house.price}}</strong></h4>
 
         </div>
