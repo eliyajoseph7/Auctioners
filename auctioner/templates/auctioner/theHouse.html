@@ -1,0 +1,33 @@
+{% extends "custom/main2.html" %} {% block content %}
+<div class="col-md-8">
+    <div class="card m-auto">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6 parent">
+                    <div class="thumb" style="height: 400px;">
+                        <img src="{{house.imageURL}}" alt="{{house.imageURL}}" class="h-100 w-100" style="object-fit: cover;">
+                        <a href="{{house.imageURL}}" class="w-100" style="height: 400px;">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div>
+                        <h2>{{house.street}}</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore nostrum magni esse voluptatum porro, ratione quis praesentium non quo quae nobis earum aliquam veniam necessitatibus voluptatem ut dolorum dicta expedita.</p>
+                    </div>
+                    <div class="flex">
+                        <h4 style="display: inline-flex; float: left;"><strong>${{house.price}}</strong></h4>
+                        <button data-product="{{house.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart float-right">Add to Cart</button>
+                    </div>
+                    <div style="margin-top: 20%;">
+                        <a href="{% url 'index' %}" class="btn btn-outline-secondary float-right"><i class="fa fa-angle-double-left"></i>Go back</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock content %}
