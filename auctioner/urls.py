@@ -10,6 +10,7 @@ urlpatterns = [
     path('register/', views.register, name='register'),   
     path('renter/', views.renter, name='renter'),
     path('checkout/', views.checkout, name='checkout'),
+    path('house/<int:id>', views.house_view, name='theHouse'),
 
 
     #house owner urls
