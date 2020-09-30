@@ -83,6 +83,14 @@ def houses(request):
 	 
 	return render(request, 'auctioner/houses.html')
 
+
+def house_view(request, id):
+	house = House.objects.get(id=id)
+	context = {
+		'house': house
+	}
+	return render(request, 'auctioner/theHouse.html', context)
+
 #Renter Logic here
 @login_required(login_url='index')
 @allowed_users(allowed_roles=['renters'])
